@@ -27,12 +27,20 @@ jobs:
         scale: 1.0
         src: test/test.drawio
         dest: test.svg
-    - name: Convert test file to pdf
+#     - name: Convert test file to pdf
+#       uses: ./
+#       with:
+#         scale: 1.0
+#         src: test/test.drawio
+#         dest: test.pdf
+    - name: Convert test file to specified format
       uses: ./
       with:
         scale: 1.0
-        src: test/test.drawio
-        dest: test.pdf
+        format: pdf
+        src: 'test/*.drawio'
+        dest: '.'
+
     - name: Upload images as artifacts
       uses: actions/upload-artifact@v1
       with:
