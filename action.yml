@@ -2,6 +2,11 @@ name: 'actions-drawio'
 author: 'Burnett01'
 description: 'Convert draw.io documents to jpeg|png|svg|pdf.'
 inputs:
+  format:
+    description: 'format svg|png|jpeg|pdf'
+    required: false
+    default: 'svg'
+
   quality:
     description: 'Image quality for png|jpeg'
     required: false
