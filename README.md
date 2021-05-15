@@ -1,6 +1,6 @@
 # actions-drawio ![CI Tests](https://github.com/Burnett01/actions-drawio/workflows/CI%20Tests/badge.svg)
 
-Convert draw.io documents to ``jpeg|png|svg|pdf`` using [drawio-batch](https://github.com/languitar/drawio-batch).
+Convert draw.io compressed XML-documents to ``jpeg|png|svg|pdf`` using [drawio-batch](https://github.com/languitar/drawio-batch).
 
 This action makes use of the heavily optimized Docker image [(alpine-drawio-batch)](https://github.com/Burnett01/docker-images/tree/alpine-drawio-batch).
 
@@ -14,7 +14,7 @@ You can run this action by using the ``with:`` block
   steps:
   - uses: actions/checkout@v2
   - name: Convert digramm to png
-    uses: Burnett01/actions-drawio@1.0
+    uses: Burnett01/actions-drawio@1.1
     with:
       src: diagramm.drawio
       dest: diagramm.png
@@ -40,7 +40,7 @@ You can combine this actions with other ones, such as [upload-artifact](https://
 steps:
     - uses: actions/checkout@v2
     - name: Convert test file to png image
-      uses: Burnett01/actions-drawio@1.0
+      uses: Burnett01/actions-drawio@1.1
       with:
         src: test.drawio
         dest: test.png
@@ -50,6 +50,17 @@ steps:
         name: png
         path: test.png
 ```
+
+---
+
+## Note
+
+If you are using uncompressed drawio XML documents, this action will not work.<br />
+The underlaying module only supports compressed XML-documents.
+
+Thus, you will have to export your draw.io XML document as "compressed".
+
+[Check out this post to see how this is one.](https://github.com/Burnett01/actions-drawio/issues/1#issuecomment-830344814)
 
 ---
 
