@@ -14,7 +14,7 @@ You can run this action by using the ``with:`` block
   steps:
   - uses: actions/checkout@v2
   - name: Convert digramm to png
-    uses: Burnett01/actions-drawio@1.1
+    uses: Burnett01/actions-drawio@1.2
     with:
       src: diagramm.drawio
       dest: diagramm.png
@@ -40,7 +40,7 @@ You can combine this actions with other ones, such as [upload-artifact](https://
 steps:
     - uses: actions/checkout@v2
     - name: Convert test file to png image
-      uses: Burnett01/actions-drawio@1.1
+      uses: Burnett01/actions-drawio@1.2
       with:
         src: test.drawio
         dest: test.png
@@ -71,3 +71,4 @@ Check the Actions tab for a live demo:
 [Live Demo](https://github.com/Burnett01/actions-drawio/actions?query=workflow%3A%22CI+Tests%22)
 
 <img src="https://i.imgur.com/yvsjy2P.png" />     
+
